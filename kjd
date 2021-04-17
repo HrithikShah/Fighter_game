@@ -1,0 +1,58 @@
+[33mcommit 27102da0aae38f709d3a049301ce99dea77ba513[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Hrithik Shah <hrithikshah10137@gmail.com>
+Date:   Sat May 23 15:36:47 2020 +0530
+
+    initial commit
+
+[1mdiff --git a/MovingRectangle.PY b/MovingRectangle.PY[m
+[1mnew file mode 100644[m
+[1mindex 0000000..85ec148[m
+[1m--- /dev/null[m
+[1m+++ b/MovingRectangle.PY[m
+[36m@@ -0,0 +1,46 @@[m
+[32m+[m[32mimport pygame[m
+[32m+[m[32mpygame.init()  #important statement[m[41m [m
+[32m+[m
+[32m+[m[32mwin=pygame.display.set_mode((500,500))# to make a screen of definite resolution[m
+[32m+[m
+[32m+[m[32mpygame.display.set_caption("first game")# to give name to the screen[m
+[32m+[m
+[32m+[m
+[32m+[m[32mx=50[m
+[32m+[m[32my=50[m
+[32m+[m[32mwidth =40[m
+[32m+[m[32mheight=60[m
+[32m+[m[32mvel=5[m
+[32m+[m
+[32m+[m[32mrun=True[m
+[32m+[m
+[32m+[m[32mwhile run:[m
+[32m+[m[32m    pygame.time.delay(100)# to keep check on events for each loop[m
+[32m+[m
+[32m+[m[32m    for event in pygame.event.get():[m
+[32m+[m[32m        if event.type == pygame.QUIT:# to make X work on screen[m
+[32m+[m[32m            run=False[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    keys=pygame.key.get_pressed()[m
+[32m+[m
+[32m+[m[32m    if keys[pygame.K_LEFT]:[m
+[32m+[m[32m        x-=vel[m
+[32m+[m
+[32m+[m[32m    if keys[pygame.K_RIGHT]:[m
+[32m+[m[32m        x+=vel[m
+[32m+[m[32m    if keys[pygame.K_UP]:[m
+[32m+[m[32m        y-=vel[m
+[32m+[m[32m    if keys[pygame.K_DOWN]:[m
+[32m+[m[32m        y +=vel[m
+[32m+[m
+[32m+[m[32m    win.fill((0,0,0))[m
+[32m+[m[32m    if (x+width)<=500 and x>=0 and (y+height)<=500 and y>=0:[m
+[32m+[m[32m        pygame.draw.rect(win,(255,0,0),(x,y,width,height))# to draw the rectangle (windowName,color,..)[m
+[32m+[m[32m        pygame.display.update()  # to display the updated screen[m
+[32m+[m
+[32m+[m
+[32m+[m[41m    [m
+[32m+[m
+[32m+[m[32mpygame.quit()[m
+[32m+[m[41m             [m
